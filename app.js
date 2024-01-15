@@ -10,7 +10,7 @@ app.use(express.json());
   
 app.use("/", express.static(__dirname + "/public"));
   
-//app.use("/users", users_router);
+app.use("/users", users_router);
 
 app.listen(process.env.PORT || 3001, () => {
     console.log(`run on port ${process.env.PORT || 3001}`);
