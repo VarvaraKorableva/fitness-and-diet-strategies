@@ -1,0 +1,143 @@
+.reg__body {
+    background-image: url(./images/mainPic.jpg);
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    /*background-color: #778899;*/
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.reg__form {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    align-items: center;
+    justify-content: center;
+    
+    border-radius: 20px;
+    backdrop-filter: blur(40px)
+}
+
+.reg__input {
+    height: 35px;
+    border-radius: 30px;
+    width: 80%;
+    margin: 5px;
+    border: 2px solid #fff;
+    padding-left: 10px;
+}
+
+.reg__input:hover {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.reg__link {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+}
+
+.reg__main-title {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.reg__label {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.btn {
+    width: 150px;
+    height: 40px;
+    border-radius: 30px;
+    border: 3px solid #fff;
+    background-color: transparent;
+    margin-top: 20px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.btn:hover {
+    background-color: #fff;
+    color: #778899;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.reg__header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(40px);
+    margin-bottom: 20px;
+}
+
+.reg__nav {
+    display: flex;
+}
+
+.reg__logo {
+    /*width: 50px;
+    height: 50px;
+    border: 2px solid #778899;
+    border-radius: 50%;
+    background-color: #fff;*/
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.header__fitness-logo {
+    font-size: 30px;
+}
+
+
+.reg__header-link {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    margin: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reg__header-link:hover {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.reg__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.reg__title-container {
+    margin-right: 150px;
+}
+
+.log__main_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}

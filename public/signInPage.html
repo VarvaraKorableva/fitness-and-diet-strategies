@@ -4,12 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-in</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <form id="loggin-form">
-        <input id="loggin-emal"/>
-        <input id="loggin-password"/>
-    </form>
+<body class="reg__body">
+    <header class="reg__header"> 
+        <a href="./index.html" class="reg__logo"><span class="header__fitness-logo">🤾</span> Calorie counting</a>
+        <nav class="reg__nav">
+            <a href="./signInPage.html" class="reg__header-link">SignIn</a>
+            <a href="./signUpPage.html" class="reg__header-link">SignUp</a>    
+        </nav>
+    </header>
+    <div class="log__main_container">
+        <h1 class="reg__main-title">SignIn</h1>
+        <form id="reg-form" class="reg__form">
+        
+            <label for="reg-email" class="reg__label">Email:</label>
+            <input type="email" id="reg-email" name="reg-email" class="reg__input"/>
+    
+            <label for="reg-password" class="reg__label">Password:</label>
+            <input type="password" id="reg-password" name="reg-password" class="reg__input"/>
+
+            <button type="submit" class="btn">Sign-In</button>
+        </form>
+        <div>
+            <span class="reg__link">Not registered yet?</span><a class="reg__link" href="./signInPage.html"> SignUp</a>
+        </div>
+    </div>
+
     <script></script>
 </body>
 </html>
