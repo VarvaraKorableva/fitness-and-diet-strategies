@@ -1,15 +1,14 @@
-const bcrypt = require('bcrypt')
-const jwt = require('jsonwebtoken')
+import bcrypt from 'bcrypt'
+import jwt from 'jsonwebtoken'
 
-const {
+import {
   _createUser,
   _getAllUsers,
-  //_getUser,
   _getUserByEmail,
 
-} = require("../models/users.models")
+} from "../models/users.models.js"
 
-const createUser = (req, res) => {
+export const createUser = (req, res) => {
     const { name, email, password, weight, height, gender, age } = req.body;
     _createUser(name, email, password, weight, height, gender, age)
       .then((data) => {
@@ -20,7 +19,7 @@ const createUser = (req, res) => {
       });
 };
 
-const getAllUsers = (req, res) => {
+export const getAllUsers = (req, res) => {
     _getAllUsers()
       .then((data) => {
         res.json(data);
@@ -30,7 +29,7 @@ const getAllUsers = (req, res) => {
       });
 };
 
-const getUser = async (req, res) => {
+export const getUser = async (req, res) => {
     const { email } = req.body
     try {
       const data = await _getUserByEmail(email);
@@ -42,7 +41,7 @@ const getUser = async (req, res) => {
     }
 }; 
 
-const loginUser = async (req, res) => {
+export const loginUser = async (req, res) => {
     const { email, password } = req.body
     try {
       const user = await _getUserByEmail(email);
@@ -64,11 +63,3 @@ const loginUser = async (req, res) => {
       throw error;
     }
   };
-
-
-module.exports = {
-    createUser,
-    getAllUsers,
-    getUser,
-    loginUser,
-};

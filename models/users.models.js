@@ -1,13 +1,7 @@
-const { db } = require("../config/db.js")
-const bcrypt = require('bcrypt')
-/*
-const _createUser = async (name, email, password, weight, height, gender, age) => {
-    const hashedPassword = await bcrypt.hash(password, 10)
-    return db("users")
-    .insert({ name, email, password: hashedPassword, weight, height, gender, age }).returning("*");
-};*/
+import { db } from "../config/db.js"
+import bcrypt from 'bcrypt'
 
-const _createUser = async (name, email, password, weight, height, gender, age) => {
+export const _createUser = async (name, email, password, weight, height, gender, age) => {
     try {
       const hashedPassword = await bcrypt.hash(password, 10);
   
@@ -27,27 +21,11 @@ const _createUser = async (name, email, password, weight, height, gender, age) =
     }
   };
 
-const _getAllUsers = () => {
+export const _getAllUsers = () => {
     return db("users").select("*").orderBy("id");
 };
-/*
-const _getUser = (id) => {
-    return db("users")
-    .select("*")
-    .where({ id })
-    .returning("*")
-    .catch((error) => {
-      throw new Error(`Error fetching post with id ${id}: ${error.message}`)
-    })
-};*/
 
-const _getUserByEmail = (email) => {
+export const _getUserByEmail = (email) => {
     return db("users").select("*").where({ email }).first()
- };
-
-module.exports = {
-  _createUser, 
-  _getAllUsers,
-  //_getUser,
-  _getUserByEmail
 };
+

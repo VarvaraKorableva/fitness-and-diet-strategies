@@ -130,6 +130,12 @@
     margin: auto;
 }
 
+@media screen and (max-width: 800px) {
+    .reg__container  {
+      flex-direction: column;
+    }
+  }
+
 .reg__title-container {
     margin-right: 150px;
 }

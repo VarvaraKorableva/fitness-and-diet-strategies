@@ -1,12 +1,12 @@
-const express = require("express");
+import express from "express";
 //const { auth } = require("../middlewares/utils.js");
 const users_router = express.Router();
-const {
+import {
     createUser,
     loginUser,
     getAllUsers,
     getUser,
-} = require("../controllers/users.controllers");
+} from "../controllers/users.controllers.js";
 
 users_router.post('/signup', createUser)
 users_router.post('/signin', loginUser)
@@ -14,6 +14,4 @@ users_router.post('/signin', loginUser)
 users_router.get('/', getAllUsers)
 users_router.get('/me', getUser)
 
-module.exports = {
-  users_router,
-};
+export { users_router };
