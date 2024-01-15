@@ -35,3 +35,17 @@ export const register = ({ name, email, password, weight, height, gender, age })
     });
   };
 
+export const authorize = ( {password, email} ) => {
+    return fetch(`${BASE_URL}/users/signin`, {
+        method: "POST",
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ 
+          password: password,
+          email: email, 
+        })
+    })
+        .then(checkResponse)
+  };  

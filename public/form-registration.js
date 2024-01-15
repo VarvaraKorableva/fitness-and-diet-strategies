@@ -1,6 +1,5 @@
 import { register } from './api.js';
 
-const btn = document.getElementById('reg-btn')
 const form = document.getElementById('reg-form');
 
 function handleRegSubmit(userData) {
@@ -15,9 +14,15 @@ function handleRegSubmit(userData) {
     })
     .then((res) => {
         console.log(res)
+        const form = document.getElementById('reg-form')
+        const regTitleContainer = document.getElementById('reg__title-container')
+        //const regContainer = document.getElementById('reg__container')
+        form.style.display = 'none'
+        regTitleContainer.style.display = 'none'
+
     })
     .catch((err) => {
-        console.log('Error, such Email already exists.')
+        console.log('Error:', err)
     })
 }
 

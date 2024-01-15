@@ -43,12 +43,13 @@ export const getUser = async (req, res) => {
 
 export const loginUser = async (req, res) => {
     const { email, password } = req.body
+    console.log(email, password)
     try {
       const user = await _getUserByEmail(email);
       if (!user) {
         return res.status(404).json({ error: "User not found" })
       }
-  
+      console.log(user.password)
       if (!password || !user.password) {
         return res.status(400).json({ error: "Password is not correct" });
       }

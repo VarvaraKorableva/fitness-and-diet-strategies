@@ -3,7 +3,6 @@
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
-    /*background-color: #778899;*/
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -46,7 +45,7 @@
 }
 
 .reg__main-title {
-    color: #fff;
+    color: #fff; /*#A4C3E0*/
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -87,11 +86,6 @@
 }
 
 .reg__logo {
-    /*width: 50px;
-    height: 50px;
-    border: 2px solid #778899;
-    border-radius: 50%;
-    background-color: #fff;*/
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     color: #fff;
     display: flex;
@@ -139,6 +133,15 @@
 .reg__title-container {
     margin-right: 150px;
 }
+
+@media screen and (max-width: 800px) {
+    .reg__title-container  {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+  }
 
 .log__main_container {
     display: flex;
