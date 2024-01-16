@@ -25,6 +25,24 @@
     backdrop-filter: blur(40px)
 }
 
+@media screen and (max-width: 600px) {
+    .reg__form  {
+      width: 350px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .reg__form  {
+      width: 320px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .reg__form  {
+      width: 280px;
+    }
+}
+
 .reg__input {
     height: 35px;
     border-radius: 30px;
@@ -150,6 +168,12 @@
     align-items: center;
     margin: auto;
 }
+
+@media screen and (max-width: 450px) {
+    .log__main_container  {
+        margin-top: 0;
+    }
+  }
 
 .reg__popup {
     height: 100vh;
