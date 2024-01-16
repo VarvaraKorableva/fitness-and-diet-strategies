@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function AddFood(title, amount) {
     return fetch(
-      `https://api.api-ninjas.com/v1/nutrition?query=${amount}gr ${title}&X-Api-Key=S1qqU4se/app/0TyiTWsDw==PzMrGtkYUf4ryTn2`
+      `https://api.api-ninjas.com/v1/nutrition?query=${amount}g ${title}&X-Api-Key=S1qqU4se/app/0TyiTWsDw==PzMrGtkYUf4ryTn2`
     )
       .then((res) => {
         if (!res.ok) {
@@ -46,7 +46,9 @@ function AddFood(title, amount) {
       .then((data) => {
         const div = document.getElementById('eaten');
         const newfood = document.createElement('p');
-        newfood.innerText = `${data[0].name} -|- ${data[0].serving_size_g}g -|- ${data[0].calories}ccal`;
+        newfood.innerText = `Product:${data[0].name}   
+        Amount:${data[0].serving_size_g} g   
+        Calories:${data[0].calories}ccal`;
         div.append(newfood)
         return data;
       })

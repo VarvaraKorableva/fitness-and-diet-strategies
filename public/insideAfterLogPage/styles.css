@@ -1,5 +1,5 @@
 .inside__body {
-    background-image: url(../images/wood.jpg);
+    background-image: url(../images/nastol.com.ua-9316.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -58,6 +58,7 @@
 .main__info_ccal {
    display: flex;
    flex-direction: column;
+   color:#fff;
    width: 250px;
    border-radius: 20px;
    backdrop-filter: blur(40px);
@@ -81,6 +82,7 @@
 
 .eaten__food__container {
     display: flex;
+    color: #fff;
     flex-direction: column;
     width: 550px;
     border-radius: 20px;
