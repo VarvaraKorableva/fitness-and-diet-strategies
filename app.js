@@ -1,5 +1,7 @@
 import express from "express";
-import { users_router } from "./routes/users.routes.js";
+import { users_router } from "./routes/users.routes.js"
+import { meals_routes } from "./routes/meals.routes.js"
+
 import dotenv from "dotenv";
 dotenv.config();
 import path from "path";
@@ -15,6 +17,7 @@ const currentDir = path.dirname(currentFilePath);
 app.use("/", express.static(path.join(currentDir, "public")));
   
 app.use("/users", users_router);
+app.use("/meals", meals_routes);
 
 app.listen(process.env.PORT || 3001, () => {
     console.log(`run on port ${process.env.PORT || 3001}`);
