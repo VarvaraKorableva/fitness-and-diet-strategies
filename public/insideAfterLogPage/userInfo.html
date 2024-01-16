@@ -36,7 +36,14 @@
             </section>
             <section id="eaten__food" class="eaten__food__container">
                 <button class="eaten__food__add__btn">Add eaten food</button>
-                <div>
+                <div id="eaten">
+                    <div id="modal">
+                    <form>
+                        <input id="title" type="text" placeholder="What you eaten?"/>
+                        <input id="amount" type="number" placeholder="How much gramms?"/>
+                        <button class="submit"  type="submit">Add</button>
+                    </form>
+                    </div>
                     <h3>Eaten food for today:</h3>
                     <templete id="todayFoodTemplate"></templete>
                 </div>
@@ -48,5 +55,6 @@
         <p class="footer__info">Created 2024</p>
     </footer>
     <script src="./userInfo.js"></script>
+    <script src="fromApiToFront.js"></script>
 </body>
 </html>
