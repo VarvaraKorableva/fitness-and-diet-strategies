@@ -1,0 +1,115 @@
+.inside__body {
+    background-image: url(../images/wood.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    font-family: 'Raleway', sans-serif
+}
+
+.inside__header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(40px);
+    margin-bottom: 20px;
+}
+
+
+.inside__logo {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.header__fitness-logo {
+    font-size: 30px;
+}
+
+.inside__header__greetings {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.footer__info {
+
+}
+
+.main__info_ccal {
+   display: flex;
+   flex-direction: column;
+   width: 250px;
+   border-radius: 20px;
+   backdrop-filter: blur(40px);
+   opacity: 0.8;
+   margin: 10px;
+   padding: 10px;
+}
+
+.info__container {
+    display: flex;
+}
+
+
+.info_title {
+
+}
+
+.info {
+    font-weight: bold;
+}
+
+.eaten__food__container {
+    display: flex;
+    flex-direction: column;
+    width: 550px;
+    border-radius: 20px;
+    backdrop-filter: blur(40px);
+    opacity: 0.8;
+    margin: 10px;
+    padding: 10px;
+}
+
+.main__container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.eaten__food__add__btn {
+    width: 150px;
+    border-radius: 20px;
+    height: 30px;
+    border: 2px solid rgb(53, 36, 13);
+    background-color: transparent;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+.eaten__food__add__btn:hover {
+    background-color: #fff;
+    color: rgb(53, 36, 13);
+    border: 5px solid #fff;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}

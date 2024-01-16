@@ -12,6 +12,8 @@ function handleAuthorizeSubmit(userData) {
         console.log(res)
         localStorage.setItem('token', res.token)
         localStorage.setItem('userData', JSON.stringify(res.user))
+
+        window.location.href = '../insideAfterLogPage/userInfo.html'
     })
     .catch((err) => {
         console.log('Error:', err)

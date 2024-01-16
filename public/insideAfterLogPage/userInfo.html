@@ -4,8 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calorie counting</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&display=swap" rel="stylesheet">
 </head>
-<body>
-    
+<body class="inside__body">
+    <header class="inside__header"> 
+        <a href="../index.html" class="inside__logo"><span class="header__fitness-logo">🤾</span> Calorie counting</a>
+        <p class="inside__header__greetings" id="inside__header__greetings"></p>
+    </header>
+    <main>
+        <div class="main__container">
+            <section id="main__info_ccal" class="main__info_ccal">
+                <div class="info__container">
+                    <p class="info_title">My body mass index is:  </p>
+                    <p class="info" id="index"> </p>
+                </div>
+                <div class="info__container">
+                    <p class="info_title">My daily calorie intake is:  </p>
+                    <p class="info" id="daily__calorie_intake"> </p>
+                </div>
+                <div>
+                    <p class="info_title">Consumed calories for today:  </p>
+                    <p class="info" id="eaten__ccal"> </p>
+                </div>
+                <div>
+                    <p class="info_title">Remaining calories for today.:  </p>
+                    <p class="info" id="remaining__ccal"> </p>
+                </div>
+            </section>
+            <section id="eaten__food" class="eaten__food__container">
+                <button class="eaten__food__add__btn">Add eaten food</button>
+                <div>
+                    <h3>Eaten food for today:</h3>
+                    <templete id="todayFoodTemplate"></templete>
+                </div>
+
+            </section>
+        </div>
+    </main>
+    <footer class="footer">
+        <p class="footer__info">Created 2024</p>
+    </footer>
+    <script src="./userInfo.js"></script>
 </body>
 </html>
