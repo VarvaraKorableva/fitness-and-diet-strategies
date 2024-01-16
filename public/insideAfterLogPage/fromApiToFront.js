@@ -46,7 +46,7 @@ function AddFood(title, amount) {
       .then((data) => {
         const div = document.getElementById('eaten');
         const newfood = document.createElement('p');
-        newfood.innerText = `${data[0].name} | ${data[0].serving_size_g}gr| ${data[0].calories}ccal`;
+        newfood.innerText = `${data[0].name} -|- ${data[0].serving_size_g}g -|- ${data[0].calories}ccal`;
         div.append(newfood)
         return data;
       })
