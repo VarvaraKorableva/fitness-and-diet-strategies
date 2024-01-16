@@ -3,14 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles-form.css">
     <title>Sign-up</title>
 </head>
-<body>
-    <form id="reg-form">
-        <input id="reg-name"/>
-        <input id="reg-emal"/>
-        <input id="reg-password"/>
-    </form>
-    <script></script>
+<body class="reg__body">
+    <header class="reg__header"> 
+        <a href="./index.html" class="reg__logo"><span class="header__fitness-logo">🤾</span> Calorie counting</a>
+        <nav class="reg__nav">
+            <a href="./signInPage.html" class="reg__header-link">SignIn</a>
+            <a href="./signUpPage.html" class="reg__header-link">Register</a>    
+        </nav>
+    </header>
+    <div class="reg__container" id="reg__container">
+        <div class="reg__title-container" id="reg__title-container">
+            <h1 class="reg__main-title">Registration</h1>
+            <div>
+                <span class="reg__link">Already registered?</span><a class="reg__link" href="./signInPage.html"> SignIn</a>
+            </div>
+        </div>
+
+        <form id="reg-form" class="reg__form">
+            <label for="reg-name" class="reg__label">Name:</label>
+            <input type="text" id="reg-name" name="reg-name" class="reg__input"/>
+    
+            <label for="reg-email" class="reg__label">Email:</label>
+            <input type="email" id="reg-email" name="reg-email" class="reg__input"/>
+    
+            <label for="reg-password" class="reg__label">Password:</label>
+            <input type="password" id="reg-password" name="reg-password" class="reg__input"/>
+    
+            <label for="reg-weight" class="reg__label">Weight:</label>
+            <input type="text" id="reg-weight" name="reg-weight" class="reg__input"/>
+    
+            <label for="reg-height" class="reg__label">Height:</label>
+            <input type="text" id="reg-height" name="reg-height" class="reg__input"/>
+    
+            <label for="reg-gender" class="reg__label">Gender:</label>
+            <input type="text" id="reg-gender" name="reg-gender" class="reg__input"/>
+    
+            <label for="reg-age" class="reg__label">Age:</label>
+            <input type="text" id="reg-age" name="reg-age" class="reg__input"/>
+
+            <button type="submit" class="btn" id="reg-btn">Register</button>
+        </form>
+    </div>
+    <div id="reg__popup" class="reg__popup">
+        <div id="reg__popup__container" class="reg__popup__container">
+            <div id="reg__popup__close__btn" class="reg__popup__close__btn"></div>
+            <h2 id="reg__popup__message" class="reg__popup__message"></h2>
+        </div>
+    </div>
+    <script type="module" src="./form-registration.js"></script>
 </body>
 </html>
