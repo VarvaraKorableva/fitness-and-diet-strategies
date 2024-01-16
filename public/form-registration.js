@@ -1,6 +1,7 @@
 import { register } from './api.js';
 
-const form = document.getElementById('reg-form');
+const form = document.getElementById('reg-form')
+const closeBtn =document.getElementById('reg__popup__close__btn')
 
 function handleRegSubmit(userData) {
     register({
@@ -19,6 +20,7 @@ function handleRegSubmit(userData) {
         //const regContainer = document.getElementById('reg__container')
         form.style.display = 'none'
         regTitleContainer.style.display = 'none'
+        showPopup(res.msg)
 
     })
     .catch((err) => {
@@ -51,4 +53,19 @@ function handleFormSubmit(event) {
 
 }
 
-form.addEventListener('submit', handleFormSubmit);
+function showPopup(msg) {
+    const popup = document.getElementById('reg__popup')
+    popup.style.visibility = 'visible'
+    const p = document.getElementById('reg__popup__message')
+    p.textContent = `${msg}`
+}
+
+function closePopup() {
+    const popup = document.getElementById('reg__popup')
+    popup.style.visibility = 'hidden'
+
+    window.location.href = '/signInPage.html'
+}
+
+form.addEventListener('submit', handleFormSubmit)
+closeBtn.addEventListener('click', closePopup)

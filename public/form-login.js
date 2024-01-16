@@ -8,8 +8,10 @@ function handleAuthorizeSubmit(userData) {
         password: userData.password,
     })
     .then((res) => {
+        console.log(res.user)
         console.log(res)
-
+        localStorage.setItem('token', res.token)
+        localStorage.setItem('userData', JSON.stringify(res.user))
     })
     .catch((err) => {
         console.log('Error:', err)
