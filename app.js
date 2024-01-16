@@ -14,8 +14,6 @@ const currentDir = path.dirname(currentFilePath);
 
 app.use("/", express.static(path.join(currentDir, "public")));
   
-//app.use("/", express.static(__dirname + "/public"));
-  
 app.use("/users", users_router);
 
 app.listen(process.env.PORT || 3001, () => {
