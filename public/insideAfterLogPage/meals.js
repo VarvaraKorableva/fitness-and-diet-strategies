@@ -3,7 +3,7 @@ async function renderMeals() {
         await new Promise(resolve => setTimeout(resolve, 100));
     }
 
-    const mealsData = JSON.parse(localStorage.getItem('todayMeals'));
+    const mealsData = JSON.parse(localStorage.getItem('todayMeals')) || [];
 
     const todayFoodTemplate = document.getElementById('todayFoodTemplate');
 
@@ -27,6 +27,5 @@ async function renderMeals() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    //getContent();
     renderMeals();
 });

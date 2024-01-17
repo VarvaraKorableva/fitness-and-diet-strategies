@@ -17,11 +17,21 @@ function getContent() {
         }
 
         const user_id = user.id;
-        console.log(user_id)
+
         getMeals({ user_id })
             .then((res) => {
-                console.log(res)
-                localStorage.setItem('todayMeals', JSON.stringify(res))
+                const correctData = [];
+                const currentDate = new Date()
+
+                for (const entry of res) {
+                    const entryDate = new Date(entry.timestamp);
+
+  
+                    if (entryDate.toISOString().slice(0, 10) === currentDate.toISOString().slice(0, 10)) {
+                        correctData.push(entry);
+                    }
+                }
+                localStorage.setItem('todayMeals', JSON.stringify(correctData))
             })
             .catch((err) => {
                 console.log('Error fetching meals:', err);
@@ -101,7 +111,8 @@ function calculateBMI(weight, height) {
 }
 
 function countEatenCcal() {
-    const mealsData = JSON.parse(localStorage.getItem('todayMeals'));
+    const data = localStorage.getItem('todayMeals')
+    const mealsData = JSON.parse(data) || [];
     let counter = 0;
 
     for (const meal of mealsData) {

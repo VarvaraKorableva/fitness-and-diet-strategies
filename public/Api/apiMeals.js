@@ -19,7 +19,6 @@ export const getMeals = ({user_id}) => {
         .then(checkResponse)
   };
 
-  //product_name, calories, grams, user_id
   export const addMeal = ({product_name, calories, grams, user_id}) => {
     const token = localStorage.getItem('token');
     return fetch(`${BASE_URL}/meals`, {
