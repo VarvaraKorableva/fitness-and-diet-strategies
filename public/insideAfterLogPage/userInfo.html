@@ -13,6 +13,7 @@
     <header class="inside__header"> 
         <a href="../index.html" class="inside__logo"><span class="header__fitness-logo">🤾</span> Calorie counting</a>
         <p class="inside__header__greetings" id="inside__header__greetings"></p>
+        <p class="date" id="date"></p>
     </header>
     <main>
         <div class="main__container">
@@ -30,23 +31,40 @@
                     <p class="info" id="eaten__ccal"> </p>
                 </div>
                 <div>
-                    <p class="info_title">Remaining calories for today.:  </p>
+                    <p class="info_title">Remaining calories for today:  </p>
                     <p class="info" id="remaining__ccal"> </p>
                 </div>
             </section>
             <section id="eaten__food" class="eaten__food__container">
-                <button class="eaten__food__add__btn">Add eaten food</button>
+                <button class="eaten__food__add__btn" id="eaten__food__add__btn">Add eaten food</button>
                 <div>
                     <h3>Eaten food for today:</h3>
-                    <templete id="todayFoodTemplate"></templete>
+                    <div id="todayFoodTemplate" class="todayFoodTemplate"></div>
                 </div>
-
             </section>
+        </div>
+        <div id="userInfo__popup" class="userInfo__popup">
+            <form id="userInfo__popup__container" class="userInfo__popup__container">
+                <div id="userInfo__popup__close__btn" class="userInfo__popup__close__btn"></div>
+                <label for="userInfo-name">Enter product name</label>
+                <input type="text" name="userInfo-name" id="userInfo-name" class="userInfo-input"/>
+                <label for="userInfo-gramms">Enter the amount of grams consumed</label>
+                <input type="text" name="userInfo-gramms" id="userInfo-gramms" class="userInfo-input"/>
+                <button id="userInfo-submitBtn" class="userInfo-submitBtn">Send</button>
+            </form>
+        </div>
+        <div id="userInfo__SuccessfulPopup" class="reg__popup">
+            <div class="reg__popup__container">
+                <div id="userInfo__SuccessfulPopup__close__btn" class="reg__popup__close__btn"></div>
+                <h2 id="userInfo__SuccessfulPopup__message" class="reg__popup__message">Added successfully</h2>
+            </div>
         </div>
     </main>
     <footer class="footer">
         <p class="footer__info">Created 2024</p>
     </footer>
-    <script src="./userInfo.js"></script>
+    <script type="module" src="./userInfo.js"></script>
+    <script type="module" src="./meals.js"></script>
+    <script type="module" src="./nutrition.js"></script>
 </body>
 </html>

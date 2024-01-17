@@ -16,7 +16,10 @@ export const addMeal = (req, res) => {
 };
 
 export const getAllUserMeals = (req, res) => {
-    const { user_id } = req.body
+    //const { user_id } = req.body
+    const id = req.params
+    console.log(id.id)
+    const user_id = Number(id.id)
     console.log('Received id:', user_id);
     _getAllUserMeals(user_id)
       .then((data) => {

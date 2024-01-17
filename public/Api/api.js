@@ -49,3 +49,4 @@ export const authorize = ( {password, email} ) => {
     })
         .then(checkResponse)
 };  
+
