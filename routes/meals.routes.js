@@ -7,7 +7,7 @@ import {
     deleteMeal,
 } from "../controllers/meals.controllers.js";
   
-meals_routes.get('/', getAllUserMeals)
+meals_routes.get('/:id', getAllUserMeals)
 meals_routes.post('/', addMeal)
 meals_routes.delete('/', deleteMeal)
 

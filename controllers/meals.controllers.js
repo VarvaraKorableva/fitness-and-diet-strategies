@@ -16,8 +16,8 @@ export const addMeal = (req, res) => {
 };
 
 export const getAllUserMeals = (req, res) => {
-    const { user_id } = req.body
-    console.log('Received id:', user_id);
+    const id = req.params
+    const user_id = Number(id.id)
     _getAllUserMeals(user_id)
       .then((data) => {
         res.json(data);

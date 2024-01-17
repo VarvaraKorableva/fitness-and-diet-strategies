@@ -217,3 +217,17 @@
     right: -35px;
     cursor: pointer;
 }
+
+.homePage__main-text {
+    color:#fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.homePage__main {
+    max-width: 700px;
+    margin: auto;
+    display: flex;
+    backdrop-filter: blur(40px);
+    border-radius: 15px;
+}

@@ -1,4 +1,4 @@
-import { register } from './api.js';
+import { register } from './Api/api.js';
 
 const form = document.getElementById('reg-form')
 const closeBtn =document.getElementById('reg__popup__close__btn')

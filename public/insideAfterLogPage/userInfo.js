@@ -1,8 +1,67 @@
+import { getMeals } from '../Api/apiMeals.js'
+
+function getContent() {
+    try {
+        const userData = localStorage.getItem('userData');
+
+        if (!userData) {
+            console.log('No user data found in localStorage');
+            return;
+        }
+
+        const user = JSON.parse(userData);
+
+        if (!user || !user.id) {
+            console.log('Invalid user data in localStorage');
+            return;
+        }
+
+        const user_id = user.id;
+
+        getMeals({ user_id })
+            .then((res) => {
+                const correctData = [];
+                const currentDate = new Date()
+
+                for (const entry of res) {
+                    const entryDate = new Date(entry.timestamp);
+
+  
+                    if (entryDate.toISOString().slice(0, 10) === currentDate.toISOString().slice(0, 10)) {
+                        correctData.push(entry);
+                    }
+                }
+                localStorage.setItem('todayMeals', JSON.stringify(correctData))
+            })
+            .catch((err) => {
+                console.log('Error fetching meals:', err);
+            });
+
+    } catch (error) {
+        console.log('Error parsing user data from localStorage:', error);
+    }
+}
+
 function writeGreetings() {
     const p = document.getElementById('inside__header__greetings')
     const userData = localStorage.getItem('userData')
     const user = JSON.parse(userData)
     p.innerText = `Hello, ${user.name}!`
+    const currentDate = new Date();
+
+
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth() + 1; // Месяцы в JavaScript начинаются с 0, поэтому добавляем 1
+    const day = currentDate.getDate();
+
+
+    const formattedDate = `${year}-${month < 10 ? '0' : ''}${month}-${day < 10 ? '0' : ''}${day}`;
+
+    const date = document.getElementById('date')
+    date.innerText = `Today is ${formattedDate}`
+    
+    localStorage.setItem('todayDate', JSON.stringify(formattedDate))
+
 }
 
 function viewIndexAndDailyCcal() {
@@ -16,6 +75,19 @@ function viewIndexAndDailyCcal() {
     const ccalPlace = document.getElementById('daily__calorie_intake')
     const ccal = calculateBMR(user.weight, user.height, user.age, user.gender)
     ccalPlace.innerText = ` ${ccal}`
+
+    const eatenCcal = document.getElementById('eaten__ccal')
+    const counter = countEatenCcal()
+    eatenCcal.innerText = `${counter}`
+
+    const remainingCcal = document.getElementById('remaining__ccal')
+    const remaining = calculatingRemainingCalories(ccal,counter)
+    if (remaining < 1) {
+        remainingCcal.innerText = `You've exceeded your daily calorie intake by ${Math.abs(remaining)} calories today`
+        remainingCcal.style.color = 'red'
+    }else {
+        remainingCcal.innerText = `${remaining}`
+    }
 }
 
 //ccal
@@ -38,8 +110,26 @@ function calculateBMI(weight, height) {
     return bmi.toFixed(2)
 }
 
-//document.addEventListener("DOMContentLoaded", writeGreetings)
+function countEatenCcal() {
+    const data = localStorage.getItem('todayMeals')
+    const mealsData = JSON.parse(data) || [];
+    let counter = 0;
+
+    for (const meal of mealsData) {
+      counter += meal.calories;
+    }
+  
+    return counter;
+}
+
+function calculatingRemainingCalories(a,b) {
+   return a - b
+}
+
+
 document.addEventListener("DOMContentLoaded", function() {
     writeGreetings();
     viewIndexAndDailyCcal();
+    getContent();
 });
+
