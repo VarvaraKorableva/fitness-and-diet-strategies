@@ -1,0 +1,9 @@
+Wonderful project idea . Fitness and diet are very important and always relevant subjects.
+app.js (server) is orginised and clean with routers and serving static html files.
+Good structure of database with routes, controllers and models.
+Also sending a JWT token which is a very good practice for autherisation.
+Good job with the LOGIN AND REGISTER functionality , hashing the password with bcrypt.
+Also the use of exceptions (try , catch) is great and useful.
+A video was shared but without public access privelages so unfortunatly I could not see the project in action.
+
+Great job guys!!!
